@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Task_1
 {
-    abstract class Person
+    abstract class Person : ICloneable
     {
         private string _fullname;
         private int _age;
@@ -62,5 +62,10 @@ namespace Task_1
             return (this.FullName == person.FullName && this.Age == person.Age);
         }
 
+        public object Clone()
+        {
+            return this.MemberwiseClone();
+        }
+        
     }
 }

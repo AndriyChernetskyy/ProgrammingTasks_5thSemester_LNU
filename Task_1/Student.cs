@@ -18,9 +18,9 @@ namespace Task_1
             _teacher = null;
         }
 
-        public Student(string fullName, int age, Teacher teacher):base(fullName, age)
+        public Student(string fullName, int age):base(fullName, age)
         {
-            this.Teacher = teacher;
+     //       this.Teacher = teacher;
         }
 
         public override void Input()
