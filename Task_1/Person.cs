@@ -41,7 +41,7 @@ namespace Task_1
         }
 
         public virtual void Print() {
-            Console.WriteLine($"Name: {this.FullName}, age: {this.Age}\n");
+            Console.WriteLine($"Name: {this.FullName}, age: {this.Age}");
         }
 
         public override string ToString()

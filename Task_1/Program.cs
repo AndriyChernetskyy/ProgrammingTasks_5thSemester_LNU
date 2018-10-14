@@ -14,6 +14,7 @@ namespace Task_1
               .ToDictionary(s => s[0].Trim(), s => s[1].Split(new[] { ',' }));
 
             List<Teacher> teachers = new List<Teacher>();
+            List<Student> students = new List<Student>();
 
             foreach(var i in dictionary)
             {
@@ -26,24 +27,24 @@ namespace Task_1
             List<Person> people = new List<Person>();
 
             foreach(var i in teachers)
-            {
+            { 
                 people.Add(i);
                 foreach (var j in i.Students)
                 {
                     j.Teacher = new Teacher(i.FullName, i.Age, i.Students);
                     people.Add(j);
                 }
-            } 
-            
-            //Можеш протестити це чи норм виводить
-            foreach(var i in people)
-            {
-                Console.WriteLine(i);
             }
 
+            //Можеш протестити це чи норм виводить
+            foreach (var person in people)
+            {
+                person.Print();
+                
+            }
 
             var copiedPeople = new List<Person>(people.Select(x => (Person)x.Clone()));
-
+            Console.ReadLine();
 
         }
     }

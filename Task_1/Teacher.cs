@@ -30,7 +30,7 @@ namespace Task_1
         {
             base.Input();
             Console.WriteLine("Enter teacher's students: ");
-            foreach (Student student in _students) {
+            foreach (Student student in Students) {
                 student.Input();
             }
         }
@@ -40,11 +40,11 @@ namespace Task_1
             Console.WriteLine("Teacher:");
             base.Print();
             Console.WriteLine("Teacher's students: ");
-            foreach (Student student in _students)
+            foreach (Student student in Students)
             {
                 Console.WriteLine(student);
             }
-            Console.WriteLine();
+           
         }
 
         public override bool Equals(object obj)
@@ -74,12 +74,7 @@ namespace Task_1
 
         public override string ToString()
         {
-            string toStringOutput = "";
-            foreach (Student student in _students)
-            {
-                toStringOutput += student;
-            }
-            return String.Format($"Teacher: {base.ToString()}Teacher's students: {toStringOutput}\n");
+            return String.Format($"Teacher: {base.ToString()}");
         }
 
     }

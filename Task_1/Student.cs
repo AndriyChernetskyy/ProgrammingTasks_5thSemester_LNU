@@ -36,6 +36,7 @@ namespace Task_1
             base.Print();
             Console.WriteLine("Student's teacher: ");
             Console.WriteLine(Teacher);
+            
          
         }
 
@@ -54,7 +55,7 @@ namespace Task_1
 
         public override string ToString()
         {
-            return String.Format($"Student: { base.ToString()}Student's teacher:{Teacher}\n");
+            return String.Format($"Student: { base.ToString()}");
         }
 
     }
