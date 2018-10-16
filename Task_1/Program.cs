@@ -9,6 +9,16 @@ namespace Task_1
     {
         static void Main(string[] args)
         {
+            try
+            {
+                StreamReader sr = File.OpenText("input_info.txt");
+                sr.Close();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("An error occurred: '{0}'", e);
+            }
+
             var dictionary = File.ReadAllLines("input_info.txt")
               .Select(l => l.Split(new[] { ':' }))
               .ToDictionary(s => s[0].Trim(), s => s[1].Split(new[] { ',' }));
@@ -52,7 +62,6 @@ namespace Task_1
                     writer.WriteLine(person);
                 }
             }
-
 
             Console.ReadLine();
             
