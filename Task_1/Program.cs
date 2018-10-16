@@ -44,7 +44,10 @@ namespace Task_1
             }
 
             var copiedPeople = new List<Person>(people.Select(x => (Person)x.Clone()));
+
+            
             Console.ReadLine();
+            
 
         }
     }
