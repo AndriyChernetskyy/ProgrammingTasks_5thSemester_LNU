@@ -1,2 +1,0 @@
-Teacher_1 = 32 : Student1 = 18, Student2 = 20, Student3 = 21
-Teacher_2 = 45 : Student1 = 18, Student2 = 20

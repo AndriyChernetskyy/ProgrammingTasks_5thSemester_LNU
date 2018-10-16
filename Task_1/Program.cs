@@ -13,18 +13,20 @@ namespace Task_1
               .Select(l => l.Split(new[] { ':' }))
               .ToDictionary(s => s[0].Trim(), s => s[1].Split(new[] { ',' }));
 
-            List<Teacher> teachers = new List<Teacher>();
-            List<Student> students = new List<Student>();
+            var teachers = new List<Teacher>();
+            var students = new List<Student>();
+            var studentsInTeacher = new List<Student>(); 
 
             foreach(var i in dictionary)
             {
                 foreach (var j in i.Value)
                 {
-                    teachers.Add(new Teacher(i.Key.Split('=')[0], int.Parse(i.Key.Split('=')[1]), new List<Student>() { new Student(j.Split('=')[0], int.Parse(j.Split('=')[1])) }));
+                    studentsInTeacher.Add(new Student(j.Split('=')[0], int.Parse(j.Split('=')[1])));
+                    teachers.Add(new Teacher(i.Key.Split('=')[0], int.Parse(i.Key.Split('=')[1]), studentsInTeacher));
                 }
             }
 
-            List<Person> people = new List<Person>();
+            var people = new List<Person>();
 
             foreach(var i in teachers)
             { 
@@ -36,11 +38,9 @@ namespace Task_1
                 }
             }
 
-            //Можеш протестити це чи норм виводить
-            foreach (var person in people)
+           foreach (var person in people)
             {
                 person.Print();
-                
             }
 
             var copiedPeople = new List<Person>(people.Select(x => (Person)x.Clone()));
