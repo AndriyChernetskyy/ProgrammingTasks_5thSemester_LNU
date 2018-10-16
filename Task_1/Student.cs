@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Task_1
 {
-    class Student : Person
+    public class Student : Person
     {
         private Teacher _teacher;
 

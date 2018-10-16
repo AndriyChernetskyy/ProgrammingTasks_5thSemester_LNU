@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Task_1
 {
-    class Teacher:Person
+    public class Teacher:Person
     {
         private List<Student> _students;
 

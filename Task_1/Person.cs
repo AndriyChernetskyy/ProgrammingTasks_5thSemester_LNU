@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Task_1
 {
-    abstract class Person : ICloneable
+    public abstract class Person : ICloneable
     {
         private string _fullname;
         private int _age;
